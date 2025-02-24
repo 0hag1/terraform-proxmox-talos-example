@@ -1,0 +1,18 @@
+machine:
+  install:
+    disk: ${install_disk}
+  network:
+    hostname: ${hostname}
+  time:
+    servers:
+      - /dev/ptp0
+  nodeLabels:
+    CriticalAddonsOnly: true
+
+cluster:
+  allowSchedulingOnControlPlanes: true
+  network:
+    cni:
+      name: none
+  proxy:
+    disabled: true
